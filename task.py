@@ -1,16 +1,44 @@
-# Задайте список из n чисел последовательности (1+1/n)^n и выведите на экран их сумму
-vvodnoe2 = input("Число для второй задачи: ")
+# Задайте список из нескольких чисел.
+# Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
+
+"""
+def sum_odd_index(lst):
+    s = 0
+    for i in range(len(lst)):
+        if i % 2 != 0:
+            s += lst[i]
+    print(f"Сумма равна: {s}")
 
 
-def fill(a):
-    if a == 1:
-        return 1
-    else:
-        return a * fill(a - 1)
+lst = list(map(int, input("Введите числа через пробел:\n").split()))
+sum_odd_index(lst)
+
+# Напишите программу, которая найдёт произведение пар чисел списка.
+# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
 
-def nabor(elem):
-    result = []
-    for i in range(1, elem):
-        result.append(fill(i))
-    print(result)
+def mult_lst(lst):
+    l = len(lst) // 2 + 1 if len(lst) % 2 != 0 else len(lst) // 2
+    new_lst = [lst[i] * lst[len(lst) - i - 1] for i in range(l)]
+    print(new_lst)
+
+
+lst = list(map(int, input("Введите числа через пробел:\n").split()))
+mult_lst(lst)
+
+# Задайте список из вещественных чисел. Напишите программу,
+# которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
+
+lst = list(map(float, input("Введите числа через пробел:\n").split()))
+new_lst = [round(i % 1, 2) for i in lst if i % 1 != 0]
+print(max(new_lst) - min(new_lst))
+
+# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+
+s = ""
+n = int(input("Введите число для преобразовывания десятичного числа в двоичное:\n"))
+while n != 0:
+    s = str(n % 2) + s
+    n //= 2
+print(s)
+"""
