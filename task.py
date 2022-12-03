@@ -66,3 +66,123 @@ def read_file():
     with open("file.txt", "r") as data:
         indexs = list(map(int, data.readlines()))
     return indexs
+
+
+# pyt
+# print("vik")
+# print(f"{20 * 2}")
+def greet(name):
+    return "Привет, " + name
+
+
+# name = "Олег"
+# print(f"{greet(name)}")
+# print(f"{{{{Pythonru}}}}")
+# person = {"name": "Игорь", "age": 19}
+# print(f"{person['name']}, {person['age']} лет.")
+import cmath
+
+# a = float(input("Input A: "))
+# b = float(input("Input B: "))
+# c = float(input("Input C: "))
+
+# d = (b**2) - (4 * a * c)
+# if d > 0:
+#     x1 = (-b - cmath.sqrt(d)) / (2 * a)
+#     x2 = (-b + cmath.sqrt(d)) / (2 * a)
+#     print(x1, x2)
+# elif d == 0:
+#     x = -b / (2 * a)
+#     print(x)
+# else:
+#     print("Корней нет")
+
+# 4_1. Вычислить число Пи c заданной точностью d
+# import math
+
+# d = int(input("задайте точность числа π,чисел после запятой : "))
+
+# if d < 1 or d > 10:
+#     print("точность выходит за границы диапазона")
+# else:
+#     p = str(math.pi)
+#     print(p[0 : (d + 2)])
+# 4_2. Задайте натуральное число N. Напишите программу,
+# которая составит список простых множителей числа N.
+
+# num = int(input("Введите число: "))
+# i = 2  # первое простое число
+# lst = []
+# old = num
+# while i <= num:
+#     if num % i == 0:
+#         lst.append(i)
+#         num //= i
+#         i = 2
+#     else:
+#         i += 1
+# print(f"{lst}")
+
+# 4_3.Задайте последовательность чисел. Напишите программу,
+# которая выведет список неповторяющихся элементов исходной последовательности.
+# from random import randint
+
+# N = int(input("Введите число : "))
+# mass = []
+
+# for i in range(N):
+#     mass.append(randint(0, N))
+# print(mass)
+# mass2 = []
+# for i in mass:
+#     if mass.count(i) == 1:
+#         mass2.append(i)
+# print(mass2)
+
+# 4_4. Задана натуральная степень k. Сформировать случайным
+#  образом список коэффициентов (значения от 0 до 100)
+#  многочлена и записать в файл многочлен степени k.
+# from random import randint
+# import itertools
+
+# k = randint(2, 3)
+
+
+# def get_ratios(k):
+#     ratios = [randint(0, 10) for i in range(k + 1)]
+#     while ratios[0] == 0:
+#         ratios[0] = randint(1, 10)
+#     return ratios
+
+
+# def get_polynomial(k, ratios):
+#     var = ["*x^"] * (k - 1) + ["*x"]
+#     polynomial = [
+#         [a, b, c]
+#         for a, b, c in itertools.zip_longest(ratios, var, range(k, 1, -1), fillvalue="")
+#         if a != 0
+#     ]
+#     for x in polynomial:
+#         x.append(" + ")
+#     polynomial = list(itertools.chain(*polynomial))
+#     polynomial[-1] = " = 0"
+#     return "".join(map(str, polynomial)).replace(" 1*x", " x")
+
+
+# ratios = get_ratios(k)
+# polynom1 = get_polynomial(k, ratios)
+# print(polynom1)
+
+# with open("33_Polynomial.txt", "w") as data:
+#     data.write(polynom1)
+def sumEql():
+    with open("file 44(1).txt", "r") as data:
+        eql1 = data.readline()
+
+    with open("file 44(2).txt", "r") as data:
+        eql2 = data.readline()
+
+    print(eql1 + eql2)
+
+
+sumEql()
